@@ -2,22 +2,22 @@
 
 use PHPUnit\Framework\TestCase;
 
-require_once( __DIR__ . '/../StringCalculater.php');
+require_once( __DIR__ . '/../StringCalculator.php');
 
 final class StringCalculatorTest extends TestCase
 {
     /**
-     * @dataProvider provideStringCalculaterData
+     * @dataProvider provideStringCalculatorData
      */
     public function test_string_calculator($expectedResult, $input): void
     {
-        $stringCalculater = new StringCalculater();
-        $answer = $stringCalculater->add($input);
+        $stringCalculator = new StringCalculator();
+        $answer = $stringCalculator->add($input);
 
         $this->assertSame($expectedResult, $answer);
     }
 
-    public static function provideStringCalculaterData()
+    public static function provideStringCalculatorData()
     {
         yield [
             5,
