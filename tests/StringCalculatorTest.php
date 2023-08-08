@@ -33,5 +33,10 @@ final class StringCalculatorTest extends TestCase
             0,
             '0',
         ];
+
+        yield [
+            6,
+            '1,2\n3',
+        ];
     }
 }
