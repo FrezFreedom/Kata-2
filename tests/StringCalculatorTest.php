@@ -23,5 +23,15 @@ final class StringCalculatorTest extends TestCase
             5,
             '2,3',
         ];
+
+        yield [
+            5,
+            '5',
+        ];
+
+        yield [
+            0,
+            '0',
+        ];
     }
 }
