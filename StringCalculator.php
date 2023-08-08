@@ -1,11 +1,18 @@
 <?php
 
+require_once('StringParser.php');
 
 class StringCalculator
 {
     public function add(string $str): int
     {
-        if($str == '2,3')
-            return 5;
+        $stringParser = new StringParser();
+        $number_list = $stringParser->giveNumbers($str);
+        $answer = 0;
+        foreach($number_list as $number)
+        {
+            $answer += $number;
+        }
+        return $answer;
     }
 }
