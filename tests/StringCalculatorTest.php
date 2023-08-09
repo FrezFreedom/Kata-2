@@ -44,4 +44,12 @@ final class StringCalculatorTest extends TestCase
             '2,\n3',
         ];
     }
+
+    public function test_delimiter_at_the_end_of_string(): void
+    {
+        $this->expectException(InvalidArgumentException::class);
+        
+        $stringCalculator = new StringCalculator();
+        $answer = $stringCalculator->add('1,2,');
+    }
 }
