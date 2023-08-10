@@ -9,18 +9,32 @@ class StringParser
         {
             $specificDelimiter = $this->getSpecificDelimiter($str);
             $str = $this->cutDelimiter($str);
-            $str = str_replace($specificDelimiter, ',', $str);
+            $str_number_list = explode($specificDelimiter, $str);
         }
-        
-        $this->checkExsitanceDelimiterAtEnd($str);
-        $str = str_replace('\n', ',', $str);
+        else
+        {
+            $str = str_replace('\n', ',', $str);
+            $str_number_list = explode(',', $str);
+        }
 
-        $this->checkContinuousDelimiter($str);
+        // $this->checkExsitanceDelimiterAtEnd($str);
+        // $this->checkContinuousDelimiter($str);
+        $this->allAreNumbers($str_number_list);
 
-        $str_number_list = explode(',', $str);
         $number_list = array_map('intval', $str_number_list);
-
+        
         return $number_list;
+    }
+
+    private function allAreNumbers(array $list)
+    {
+        foreach($list as $str_number)
+        {
+            if(!(is_numeric($str_number) && intval($str_number) == $str_number))
+            {
+                $this->throwException();
+            }
+        }
     }
 
     private function cutDelimiter($str)
