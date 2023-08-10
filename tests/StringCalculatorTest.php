@@ -43,6 +43,16 @@ final class StringCalculatorTest extends TestCase
             4,
             '//;\n1;3',
         ];
+
+        yield [
+            6,
+            '//|\n1|2|3',
+        ];
+
+        yield [
+            7,
+            '//sep\n2sep5',
+        ];
     }
 
 
