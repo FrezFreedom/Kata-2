@@ -18,7 +18,10 @@ class StringCalculator
         $answer = 0;
         foreach($number_list as $number)
         {
-            $answer += $number;
+            if($number <= 1000)
+            {
+                $answer += $number;
+            }
         }
         return $answer;
     }
