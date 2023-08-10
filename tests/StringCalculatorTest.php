@@ -76,5 +76,9 @@ final class StringCalculatorTest extends TestCase
         yield [
             '2,\n3',
         ];
+
+        yield [
+            '//|\n1|2,3'
+        ];
     }
 }
