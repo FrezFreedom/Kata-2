@@ -38,18 +38,28 @@ final class StringCalculatorTest extends TestCase
             6,
             '1,2\n3',
         ];
-
-        yield [
-            5,
-            '2,\n3',
-        ];
     }
 
-    public function test_delimiter_at_the_end_of_string(): void
+
+    /**
+     * @dataProvider provideStringCalculatorDataException
+     */
+    public function test_delimiter_at_the_end_of_string(string $input): void
     {
         $this->expectException(InvalidArgumentException::class);
         
         $stringCalculator = new StringCalculator();
-        $answer = $stringCalculator->add('1,2,');
+        $answer = $stringCalculator->add($input);
+    }
+
+    public static function provideStringCalculatorDataException()
+    {
+        yield [
+            '1,2,',
+        ];
+
+        yield [
+            '2,\n3',
+        ];
     }
 }
