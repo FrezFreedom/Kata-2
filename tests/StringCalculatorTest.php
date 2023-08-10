@@ -63,6 +63,11 @@ final class StringCalculatorTest extends TestCase
             'Negative number(s) not allowed: -4, -9',
             '2,-4,-9',
         ];
+
+        yield [
+            2,
+            '1001,2',
+        ];
     }
 
 
