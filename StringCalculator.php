@@ -26,7 +26,7 @@ class StringCalculator
     private function negetiveNumberError(array $number_list): string
     {
         $error = self::NEGETIVE_NUMBER_ERROR;
-        $first = TRUE;
+        $first = true;
         foreach($number_list as $number)
         {
             if($number < 0)
@@ -34,6 +34,7 @@ class StringCalculator
                 if($first)
                 {
                     $error .= strval($number);
+                    $first = false;
                 }
                 else
                 {
